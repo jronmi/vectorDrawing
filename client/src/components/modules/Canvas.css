@@ -1,0 +1,12 @@
+
+.canvas {
+    background-color: var(--off-white);
+    border: 2px solid var(--border);
+    padding: 0px;
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
+import Home from "./pages/Home.js";
+import Inspiration from "./pages/Inspiration";
+import NavBar from "./modules/NavBar.js";
 
 import "../utilities.css";
 
@@ -16,44 +19,15 @@ class App extends Component {
   // makes props available in this component
   constructor(props) {
     super(props);
-    this.state = {
-      userId: undefined,
-    };
   }
-
-  componentDidMount() {
-    get("/api/whoami").then((user) => {
-      if (user._id) {
-        // they are registed in the database, and currently logged in.
-        this.setState({ userId: user._id });
-      }
-    });
-  }
-
-  handleLogin = (res) => {
-    console.log(`Logged in as ${res.profileObj.name}`);
-    const userToken = res.tokenObj.id_token;
-    post("/api/login", { token: userToken }).then((user) => {
-      this.setState({ userId: user._id });
-      post("/api/initsocket", { socketid: socket.id });
-    });
-  };
-
-  handleLogout = () => {
-    this.setState({ userId: undefined });
-    post("/api/logout");
-  };
 
   render() {
     return (
       <>
+        <NavBar />
         <Router>
-          <Skeleton
-            path="/"
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-            userId={this.state.userId}
-          />
+          <Home path="/" />
+          <Inspiration path="/inspiration"/>
           <NotFound default />
         </Router>
       </>
