@@ -15,6 +15,7 @@
 
 // validator runs some basic checks to make sure you've set everything up correctly
 // this is a tool provided by staff, so you don't need to worry about it
+require('dotenv').config();
 const validator = require("./validator");
 validator.checkSetup();
 
@@ -33,9 +34,9 @@ const socketManager = require("./server-socket");
 
 // Server configuration below
 // TODO change connection URL after setting up your team database
-const mongoConnectionURL = "FILL ME IN";
+const mongoConnectionURL = process.env.ATLAS_SRV;
 // TODO change database name to the name you chose
-const databaseName = "FILL ME IN";
+const databaseName = process.env.SESSION_SECRET;
 
 // connect to mongodb
 mongoose
@@ -99,6 +100,4 @@ const port = 3000;
 const server = http.Server(app);
 socketManager.init(server);
 
-server.listen(port, () => {
-  console.log(`Server running on port: ${port}`);
-});
+server.listen(process.env.PORT || 3000);
