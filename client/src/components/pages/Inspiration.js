@@ -8,7 +8,7 @@ class Inspiration extends Component {
 
   render() {
     return (
-      <>
+      <div className="container">
         <div className="youtube">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/r6sGWTCMz2k"
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
@@ -25,7 +25,7 @@ class Inspiration extends Component {
             {" "}which inspired me to make my own version.
             </p>
         </div>
-      </>
+      </div>
     );
   };
 }

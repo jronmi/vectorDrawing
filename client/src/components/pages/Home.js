@@ -74,8 +74,7 @@ class Home extends Component {
     return (
       <>
         {this.state.submitted
-          ? <div>
-            <Animation
+          ? <Animation
               angle={this.state.angles}
               magnitude={this.state.magnitude}
               speed={this.state.speed}
@@ -83,13 +82,10 @@ class Home extends Component {
               reset={this.reset}
               mvc={this.state.maxVectorCount}
             />
-          </div>
-          : <div>
-            <Canvas
+          : <Canvas
               importState={this.importState}
               calculate={this.calculate}
             />
-          </div>
         }
       </>
     );

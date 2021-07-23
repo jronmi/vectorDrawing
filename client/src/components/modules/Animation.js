@@ -58,7 +58,7 @@ class Animation extends Component {
   
     render() {
       return (
-        <>
+        <div className="container">
           <Vector 
             points={this.props.points}
             angle={this.state.angle} 
@@ -73,9 +73,11 @@ class Animation extends Component {
             value={this.state.vectorCount} onChange={this.handleChange} className="sliders"/>
             <input name="speed" type="range" min="1" max="5"   
             value={this.state.speed} onChange={this.handleChange} className="sliders"/>
+          </div>
+          <div>
             <button onClick={this.props.reset} className="buttons">Reset</button>
           </div>
-        </>
+        </div>
       )};
 }
 

@@ -1,4 +1,4 @@
-# Project Skeleton
+# Project VectorDrawing
 
 ## What we provide
 

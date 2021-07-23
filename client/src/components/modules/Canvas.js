@@ -60,7 +60,7 @@ class Canvas extends Component{
 
     render()  {
         return (
-            <>
+            <div className="container">
                 <div className="canvas-container">
                     <canvas className="canvas"
                         ref={this.canvasRef} 
@@ -69,10 +69,12 @@ class Canvas extends Component{
                         onMouseDown={(e) => this.handleMouseDown(e.nativeEvent)}
                         onMouseMove={(e) => this.handleMouseMove(e.nativeEvent)}
                         onMouseUp={(e) => this.handleMouseUp(e.nativeEvent)}
-                    />
+                    /> 
                 </div>
-                <button onClick={this.props.calculate} className="buttons">Submit</button>
-            </>
+                <div className="button-container">
+                    <button onClick={this.props.calculate} className="button">Submit</button>
+                </div>
+           </div> 
         );
     };
 }
