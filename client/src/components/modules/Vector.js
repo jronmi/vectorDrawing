@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Canvas.css";
 
 class Vector extends Component {
     constructor(props) {
@@ -47,8 +46,8 @@ class Vector extends Component {
   
     render() {
       return (
-        <div className="canvas-container">
-          <canvas className="canvas" width={this.props.x} height={this.props.y} ref={this.canvasRef}/>
+        <div className="">
+          <canvas className="" width={this.props.x} height={this.props.y} ref={this.canvasRef}/>
         </div>
       );
     }

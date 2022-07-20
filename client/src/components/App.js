@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
-import Skeleton from "./pages/Skeleton.js";
+import Drawing from "./pages/Drawing.js";
 import Home from "./pages/Home.js";
-import Inspiration from "./pages/Inspiration";
 import NavBar from "./modules/NavBar.js";
 
-import "../utilities.css";
+//import "../utilities.css";
+import "../styles/globals.css"
 
-import { socket } from "../client-socket.js";
-
-import { get, post } from "../utilities";
+import { get, post } from "../utilities.js";
 
 /**
  * Define the "App" component as a class.
@@ -27,7 +25,7 @@ class App extends Component {
         <NavBar />
         <Router>
           <Home path="/" />
-          <Inspiration path="/inspiration"/>
+          <Drawing path="/drawing"/>
           <NotFound default />
         </Router>
       </>

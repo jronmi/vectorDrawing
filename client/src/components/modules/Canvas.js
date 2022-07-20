@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import "./Canvas.css";
-
 // Note to self, the offsetX and Y are relative to the origin since the listeners are attatched to the Canvas element
 
 
@@ -61,8 +59,8 @@ class Canvas extends Component{
     render()  {
         return (
             <>
-                <div className="canvas-container">
-                    <canvas className="canvas"
+                <div className="flex justify-center m-5">
+                    <canvas className="border-black border-2 bg-canvas"
                         ref={this.canvasRef} 
                         width={this.x}
                         height={this.y}
